@@ -209,3 +209,20 @@ h1 {
     font-size: 18px;
   }
 }
+
+/* Misc
+     ========================================================================== */
+  /**
+   * Add the correct display in IE 10+.
+   */
+   template {
+    display: none;
+  }
+  
+  /**
+   * Add the correct display in IE 10.
+   */
+  [hidden] {
+    display: none;
+  }
+   
