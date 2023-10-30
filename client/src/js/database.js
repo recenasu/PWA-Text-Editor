@@ -1,9 +1,10 @@
 import { openDB } from 'idb';
 import { header } from './header';
 
+// Define function to initialize the IndexedDB database
 const initdb = async () => {
     
-  // Seed the db with the header
+  // Define function to seed the db with the header
   const seedDb = async () => {
     console.log('Update the database');
   
@@ -27,10 +28,8 @@ const initdb = async () => {
   
   };
   
-  
-  
-  
-  openDB('jate', 1, {
+  // create the db if it does not already exist and seed it with the header.
+    openDB('jate', 1, {
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
         console.log('jate database already exists');
@@ -44,13 +43,10 @@ const initdb = async () => {
   });
 
   
-
-// seed localstorage with the header
+// If local storage contains no content, seed it with the header
     if (!localStorage.getItem('content')) {
       localStorage.setItem('content', header);
     };
-
-
 
 };
 
@@ -99,7 +95,7 @@ const request = store.getAll();
 const result = await request;
 console.log('result.value', result);
 
-// Convert the result into a string
+// Obtain the 'content' key value from the the first object in the array.
 const resultString = result[0].content;
 
 return resultString;
