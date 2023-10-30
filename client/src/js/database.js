@@ -1,6 +1,35 @@
 import { openDB } from 'idb';
+import { header } from './header';
 
-const initdb = async () =>
+const initdb = async () => {
+    
+  // Seed the db with the header
+  const seedDb = async () => {
+    console.log('Update the database');
+  
+  // Connect to the jate version 1 database.
+  const jateDb = await openDB('jate', 1);
+  
+  // Create a read/write transaction on the 'jate' object store
+  const tx = jateDb.transaction('jate', 'readwrite');
+  
+  // Open the 'jate' object store
+  const store = tx.objectStore('jate');
+  
+  // Update the data in the object store
+  const request = store.put({ id: 1, content: header });
+  
+  // Get confirmation of the request
+  const result = await request;
+  console.log('result.value', result);
+  
+  return result;
+  
+  };
+  
+  
+  
+  
   openDB('jate', 1, {
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
@@ -9,13 +38,72 @@ const initdb = async () =>
       }
       db.createObjectStore('jate', { keyPath: 'id', autoIncrement: true });
       console.log('jate database created');
+      seedDb();
+      console.log('jate database seeded');
     },
   });
 
+  
+
+// seed localstorage with the header
+    if (!localStorage.getItem('content')) {
+      localStorage.setItem('content', header);
+    };
+
+
+
+};
+
 // TODO: Add logic to a method that accepts some content and adds it to the database
-export const putDb = async (content) => console.error('putDb not implemented');
+
+export const putDb = async (content) => {
+  console.log('Update the database');
+
+// Connect to the jate version 1 database.
+const jateDb = await openDB('jate', 1);
+
+// Create a read/write transaction on the 'jate' object store
+const tx = jateDb.transaction('jate', 'readwrite');
+
+// Open the 'jate' object store
+const store = tx.objectStore('jate');
+
+// Update the data in the object store
+const request = store.put({ id: 1, content: content });
+
+// Get confirmation of the request
+const result = await request;
+console.log('result.value', result);
+
+return result;
+
+};
 
 // TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error('getDb not implemented');
+export const getDb = async () => {
+  console.log('GET from the database');
+
+// Connect to the jate version 1 database.
+const jateDb = await openDB('jate', 1);
+
+// Create a readonly transaction on the 'jate' object store
+const tx = jateDb.transaction('jate', 'readonly');
+
+// Open the 'jate' object store
+const store = tx.objectStore('jate');
+
+// Get all data in the database
+const request = store.getAll();
+
+// Get confirmation of the request
+const result = await request;
+console.log('result.value', result);
+
+// Convert the result into a string
+const resultString = result[0].content;
+
+return resultString;
+ 
+};
 
 initdb();
