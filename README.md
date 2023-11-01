@@ -1,14 +1,14 @@
 # PWA-Text-Editor
-A Progressive Web Application text editor
+Progressive Web Application (PWA) Text Editor
 
 ## Description
-The purpose of this project is to build a text editor that runs in the browser. The app will be a single-page application that meets the PWA criteris and uses a number of data persistence techniques. The application will have the capability to function offline. Acceptance Criteria have been broken down into individual features (e.g. AC01). For details on the implementation, review the applicable 'Usage' section of this README.
+The purpose of this project is to build a text editor that runs in the browser. The app is a single-page application that meets the PWA criteria and uses a number of data persistence techniques. The application has the capability to function offline. Acceptance Criteria have been broken down into individual features (e.g. AC01). For details on the implementation, review the applicable 'Usage' section of this README.
 
 ### User Story
 
 * AS A developer
 >    -	I WANT to create notes or code snippets with or without an internet connection
-SO THAT I can reliably retrieve them for later use
+>    -	SO THAT I can reliably retrieve them for later use
 
 ### Acceptance Criteria
 
@@ -64,28 +64,37 @@ SO THAT I can reliably retrieve them for later use
 
 ## Installation
 
-> * To access the deployed application on Heroku, open the browser and paste the following URL in the address bar, or click on the link: https://mighty-peak-34565-5d76a01154b0.herokuapp.com
+> * To access the deployed application on Heroku, open the browser and paste the following URL in the address bar, or click on the link: https://mighty-peak-34565-5d76a01154b0.herokuapp.co
 > * To access the project repo, open the browser and paste the following URL in the address bar, or click on the link: https://github.com/recenasu/PWA-Text-Editor
 
 ## Usage
 
->    -	To launch the application, TBD
+> * To launch the application, open the browser and paste the following URL in the address bar, or click on the link: https://mighty-peak-34565-5d76a01154b0.herokuapp.co
+> * Type the desired text into the text field. 
+> * Click somewhere off of the text entry area to save the text.
+> * The text is now saved to the local database and will be displayed again upon refreshing or navigating away and returning to the app.
+> * If desired, click the Install button to install the app to your computer. Click Install in the confirmation popup. A desktop icon is now available to launch the application whether offline or online.
 
+> * The following screens show the deployed application.
 
-> * The following screens show TBD
+> * Launched JATE application.
+![Exhibit 1](./assets/Screenshot1.png)
 
-> * Screen 1
-![Exhibit 1](./assets/screen1.png)
+> * Application - Manifiest.
 
-> * Screen2
+![Exhibit 2](./assets/Screenshot2.png)
 
-![Exhibit 2](./assets/screen2.png)
+> * Local Storage populated.
 
-> * Screen 3
+![Exhibit 3](./assets/Screenshot3.png)
 
-![Exhibit 3](./assets/screen3.png)
+> * Indexed DB populated
 
+![Exhibit 4](./assets/Screenshot4.png)
 
+> * Registered Service Worker
+
+![Exhibit 4](./assets/Screenshot5.png)
 
 ## Credits
 
