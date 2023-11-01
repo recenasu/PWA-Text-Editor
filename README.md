@@ -64,8 +64,8 @@ SO THAT I can reliably retrieve them for later use
 
 ## Installation
 
-> * To access the deployed application on Heroku, open the browser and paste the following URL in the address bar, or click on the link: TBD
-> * To access the project repo, open the browser and paste the following URL in the address bar, or click on the link: TBD
+> * To access the deployed application on Heroku, open the browser and paste the following URL in the address bar, or click on the link: https://mighty-peak-34565-5d76a01154b0.herokuapp.com
+> * To access the project repo, open the browser and paste the following URL in the address bar, or click on the link: https://github.com/recenasu/PWA-Text-Editor
 
 ## Usage
 
@@ -89,7 +89,6 @@ SO THAT I can reliably retrieve them for later use
 
 ## Credits
 
-> * npm express v4.17.1 module was used for managing API routes.
-> * npm mongoose v7.0.2 module was used for database connectivity.
+> * npm webpack v5.51.1 module was used for bundling the application files.
 > * refer to package.json for these and any other dependencies.
 

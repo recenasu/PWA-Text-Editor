@@ -7,29 +7,30 @@ const initdb = async () => {
   // Define function to seed the db with the header
   const seedDb = async () => {
     console.log('Update the database');
-  
-  // Connect to the jate version 1 database.
-  const jateDb = await openDB('jate', 1);
-  
-  // Create a read/write transaction on the 'jate' object store
-  const tx = jateDb.transaction('jate', 'readwrite');
-  
-  // Open the 'jate' object store
-  const store = tx.objectStore('jate');
-  
-  // Update the data in the object store
-  const request = store.put({ id: 1, content: header });
-  
-  // Get confirmation of the request
-  const result = await request;
-  console.log('result.value', result);
-  
-  return result;
-  
+
+    // Connect to the jate version 1 database.
+    const jateDb = await openDB('jate', 1);
+
+    // Create a read/write transaction on the 'jate' object store
+    const tx = jateDb.transaction('jate', 'readwrite');
+
+    // Open the 'jate' object store
+    const store = tx.objectStore('jate');
+
+    // Update the data in the object store
+    const request = store.put({ id: 1, content: header });
+
+    // Get confirmation of the request
+    const result = await request;
+    // console.log('result.value', result);
+    console.log('jate database seeded');
+
+    return result;
+
   };
-  
+
   // create the db if it does not already exist and seed it with the header.
-    openDB('jate', 1, {
+  openDB('jate', 1, {
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
         console.log('jate database already exists');
@@ -42,11 +43,11 @@ const initdb = async () => {
     },
   });
 
-  
-// If local storage contains no content, seed it with the header
-    if (!localStorage.getItem('content')) {
-      localStorage.setItem('content', header);
-    };
+
+  // If local storage contains no content, seed it with the header
+  if (!localStorage.getItem('content')) {
+    localStorage.setItem('content', header);
+  };
 
 };
 
@@ -55,23 +56,23 @@ const initdb = async () => {
 export const putDb = async (content) => {
   console.log('Update the database');
 
-// Connect to the jate version 1 database.
-const jateDb = await openDB('jate', 1);
+  // Connect to the jate version 1 database.
+  const jateDb = await openDB('jate', 1);
 
-// Create a read/write transaction on the 'jate' object store
-const tx = jateDb.transaction('jate', 'readwrite');
+  // Create a read/write transaction on the 'jate' object store
+  const tx = jateDb.transaction('jate', 'readwrite');
 
-// Open the 'jate' object store
-const store = tx.objectStore('jate');
+  // Open the 'jate' object store
+  const store = tx.objectStore('jate');
 
-// Update the data in the object store
-const request = store.put({ id: 1, content: content });
+  // Update the data in the object store
+  const request = store.put({ id: 1, content: content });
 
-// Get confirmation of the request
-const result = await request;
-console.log('result.value', result);
+  // Get confirmation of the request
+  const result = await request;
+  console.log('result.value', result);
 
-return result;
+  return resultString;
 
 };
 
@@ -79,27 +80,27 @@ return result;
 export const getDb = async () => {
   console.log('GET from the database');
 
-// Connect to the jate version 1 database.
-const jateDb = await openDB('jate', 1);
+  // Connect to the jate version 1 database.
+  const jateDb = await openDB('jate', 1);
 
-// Create a readonly transaction on the 'jate' object store
-const tx = jateDb.transaction('jate', 'readonly');
+  // Create a readonly transaction on the 'jate' object store
+  const tx = jateDb.transaction('jate', 'readonly');
 
-// Open the 'jate' object store
-const store = tx.objectStore('jate');
+  // Open the 'jate' object store
+  const store = tx.objectStore('jate');
 
-// Get all data in the database
-const request = store.getAll();
+  // Get all data in the database
+  const request = store.getAll();
 
-// Get confirmation of the request
-const result = await request;
-console.log('result.value', result);
+  // Get confirmation of the request
+  const result = await request;
+  console.log('result.value', result);
 
-// Obtain the 'content' key value from the the first object in the array.
-const resultString = result[0].content;
+  // Obtain the 'content' key value from the the first object in the array.
+  const resultString = result[0].content;
 
-return resultString;
- 
+  return resultString;
+
 };
 
 initdb();
