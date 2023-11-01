@@ -69,7 +69,7 @@ The purpose of this project is to build a text editor that runs in the browser. 
 
 ## Usage
 
-> * To launch the application, open the browser and paste the following URL in the address bar, or click on the link: https://mighty-peak-34565-5d76a01154b0.herokuapp.co
+> * To launch the application, open the browser and paste the following URL in the address bar, or click on the link: https://pwa-text-editor-app-coolest-11404ff70e6f.herokuapp.com/
 > * Type the desired text into the text field. 
 > * Click somewhere off of the text entry area to save the text.
 > * The text is now saved to the local database and will be displayed again upon refreshing or navigating away and returning to the app.
