@@ -64,7 +64,7 @@ The purpose of this project is to build a text editor that runs in the browser. 
 
 ## Installation
 
-> * To access the deployed application on Heroku, open the browser and paste the following URL in the address bar, or click on the link: https://mighty-peak-34565-5d76a01154b0.herokuapp.co
+> * To access the deployed application on Heroku, open the browser and paste the following URL in the address bar, or click on the link: https://pwa-text-editor-app-coolest-11404ff70e6f.herokuapp.com/
 > * To access the project repo, open the browser and paste the following URL in the address bar, or click on the link: https://github.com/recenasu/PWA-Text-Editor
 
 ## Usage
